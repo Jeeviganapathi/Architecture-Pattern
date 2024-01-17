@@ -10,8 +10,12 @@ public class BankService {
     @Autowired
     BankRepo bankRepo;
 
-    public void getNameFromAccountNumber(int accountNumber){
+    public String getNameFromAccountNumber(int accountNumber){
         Optional<Account> account = bankRepo.findById(accountNumber);
-        account.ifPresent(value -> System.out.println(value.getName() + "------------------------------------------------"));
+        return account.get().getName();
+    }
+
+    public void insertAccount(Account account){
+        bankRepo.save(account);
     }
 }

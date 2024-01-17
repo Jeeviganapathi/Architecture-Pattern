@@ -9,10 +9,15 @@ public class BankController {
 
     @Autowired
     BankService bankService;
+
     @RequestMapping(value="/getName", method = RequestMethod.GET)
-    public void getNameOfAccountHolder(@RequestParam int number){
-        System.out.println("found controller ------------------------------------------------");
-        bankService.getNameFromAccountNumber(number);
+    public String getNameOfAccountHolder(@RequestParam int number){
+        return bankService.getNameFromAccountNumber(number);
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public void addAccount(Account account){
+        bankService.insertAccount(account);
     }
 
 
