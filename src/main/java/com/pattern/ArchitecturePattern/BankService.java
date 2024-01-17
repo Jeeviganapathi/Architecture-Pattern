@@ -1,11 +1,10 @@
-package Services;
+package com.pattern.ArchitecturePattern;
 
-import Models.Account;
-import Repositories.BankRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class BankService {
 
     @Autowired

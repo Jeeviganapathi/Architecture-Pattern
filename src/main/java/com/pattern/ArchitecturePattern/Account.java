@@ -1,6 +1,11 @@
-package Models;
+package com.pattern.ArchitecturePattern;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Account {
+    @Id
     private int number;
     private String name;
     private long balance;
