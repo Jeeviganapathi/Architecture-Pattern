@@ -20,5 +20,10 @@ public class BankController {
         bankService.insertAccount(account);
     }
 
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public void updateAccountBalance(int number, long balance){
+        bankService.updateBalance(number, balance);
+    }
+
 
 }

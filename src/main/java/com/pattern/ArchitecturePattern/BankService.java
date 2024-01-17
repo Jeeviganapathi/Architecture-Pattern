@@ -18,4 +18,8 @@ public class BankService {
     public void insertAccount(Account account){
         bankRepo.save(account);
     }
+
+    public void updateBalance(int number, long balance){
+        bankRepo.updateBalance(balance, number);
+    }
 }
