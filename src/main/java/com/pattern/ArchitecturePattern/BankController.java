@@ -1,17 +1,19 @@
 package com.pattern.ArchitecturePattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BankController {
 
     @Autowired
     BankService bankService;
-    @GetMapping("/getName")
-    public void getNameOfAccountHolder(){
-        System.out.println("found controller");
-        bankService.getNameFromAccountNumber(100);
+    @RequestMapping(value="/getName", method = RequestMethod.GET)
+    public void getNameOfAccountHolder(@RequestParam int number){
+        System.out.println("found controller ------------------------------------------------");
+        bankService.getNameFromAccountNumber(number);
     }
+
+
 }

@@ -12,6 +12,6 @@ public class BankService {
 
     public void getNameFromAccountNumber(int accountNumber){
         Optional<Account> account = bankRepo.findById(accountNumber);
-        account.ifPresent(value -> System.out.println(value.getName()));
+        account.ifPresent(value -> System.out.println(value.getName() + "------------------------------------------------"));
     }
 }
